@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body>
+  <div class="calculator">
+    <div class="display">
+
+      <div class="primary-display"><input id="screen" type="text" placeholder="0"></div>
+    </div>
+    <div class="buttons">
+      <button class="top-button" onclick="deg(value)" id="degree" value="deg">DEG</button>
+      <button class="top-button" onclick="fe(value)" value="fe">F-E</button>
+      <button class="top-button"  onclick="backspc()"><img src="icons8-multiply-24.png"/></button>
+      <button class="top-button"></button>
+      <button class="top-button"></button>
+
+      <button class="memory-btn" onclick="mc(value)" value="memoryClear" id="clear"
+      disabled>MC</button>
+      <button class="memory-button" onclick="mr(value)" value="memoryRecall" id="recall"
+      disabled>MR</button>
+      <button class="memory-button" onclick="memoryadd(value)" value="memoryAdd">M+</button>
+      <button class="memory-button" onclick="memorysubtract(value)" value="memorySubtract">M-</button>
+      <button class="memory-button" onclick="ms(value)" value="memoryStore">MS</button>
+
+      <button onclick="toggleView()">2<sup>nd</sup></button>
+      <button onclick="pi()">pi</button>
+      <div class="dropdown-container">
+        <button class="dropdown" onclick="toggleDropdown()">Trigonometry <span>&#x25BE;</span></button>
+        <div id="dropdown-menu" class="dropdown-menu">
+          <button>2<sup>nd</sup></button>
+          <button class="display_1" onclick="trigo(value)" value="sin">sin</button>
+          <button class="display_1" onclick="trigo(value)" value="cos">cos</button>
+          <button class="display_1" onclick="trigo(value)" value="tan">tan</button>
+          <button class="display_1" onclick="trigo(value)" value="hyp">hyp</button>
+          <button class="display_1" onclick="trigo(value)" value="sec">sec</button>
+          <button class="display_1" onclick="trigo(value)" value="csc">csc</button>
+          <button class="display_1" onclick="trigo(value)" value="cot">cot</button>
+
+          <button class="display_2" onclick="trigo(value)" value="sin-1">sin<sup>-1</sup></button>
+          <button class="display_2" onclick="trigo(value)" value="cos-1">cos<sup>-1</sup></button>
+          <button class="display_2" onclick="trigo(value)" value="tan-1">tan<sup>-1</sup></button>
+          <button class="display_2" onclick="trigo(value)" value="hyp">hyp</button>
+          <button class="display_2" onclick="trigo(value)" value="sec-1">sec<sup>-1</sup></button>
+          <button class="display_2" onclick="trigo(value)" value="csc-1">csc<sup>-1</sup></button>
+          <button class="display_2" onclick="trigo(value)" value="cot-1">cot<sup>-1</sup></button>
+
+
+        </div>
+      </div>
+      
+      <div class="dropdown-container_two">
+        <!-- Function Toggle Button -->
+        <button class="dropdown_two" onclick="toggleFunction()">Function <span>&#x25BE;</span></button>
+        <div id="function-menu" class="function-menu hidden">
+          <button>|x|</button>
+          <button onclick="functions(value)" value="floor">floor</button>
+          <button onclick="functions(value)" value="ceil">ceil</button>
+          <button onclick="functions(value)" value="rand">rand</button>
+          <button onclick="functions(value)" value="dms">→dms</button>
+          <button onclick="functions(value)" value="deg">→deg</button>
+        </div>
+      </div>
+      <button id="clear" onclick="screen.value=''">clear</button>
+
+      <button class="view_1" onclick="xTothePowertwo()" value="x^2">x<sup>2</sup></button>
+      <button class="view_2" onclick=" xTothePowerthree(value)" value='x^3'>x<sup>3</sup>
+      <button onclick="xInverse()">1/x</button>
+      <button onclick="modulus()">|x|</button>
+      <button onclick="e()">e</button>
+      <button class="btn">%</button>
+
+      <button  class="view_1" onclick="sqrt()" value="squareRoot"><sup>2</sup>&radic;x</button>
+      <button class="view_2" onclick="cubert(value)" value="cubeRoot"><sup>3</sup>&#8730;x</button>
+      <button class="btn">(</button>
+      <button class="btn">)</button>
+      <button onclick="factorial(value)" value="factorial">n!</button>
+      <button class="btn">/</button>
+
+      <button class="view_1"onclick="xTothePowery(x,y)" value="x^y">x <sup>y</sup></button>
+      <button class="view_2" onclick=" xRooty(value)" value="xrooty"><sup>y</sup>&#8730;x</button>
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn">*</button>
+
+      <button class="view_1" onclick="tenPowerx()" value="10powerx">10<sup>x</sup></button>
+      <button class="view_2" onclick="twoTothePowerx(value)" value="twoTothePowerx">2<sup>x</sup></sup></button>
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn">-</button>
+
+      <button class="view_1" onclick="log(value)" value="log">log</button>
+      <button class="view_2" onclick="logy(value)" value="logy">log<sub>y</sub>x</button>
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn">+</button>
+
+      <button class="view_1" value="ln" onclick="ln()">ln</button>
+      <button class="view_2" onclick="ePowerx(value)" value="ePowerx">e<sup>x</sup></button>
+      <button onclick="changeSign()">+/-</button>
+      <button class="btn">0</button>
+      <button class="btn">.</button>
+      <button  id="eval" onclick="screen.value=eval(screen.value)">=</button>
+    </div>
+  </div>
+</body>
+<script  src="script.js"></script>
+
+</html>
