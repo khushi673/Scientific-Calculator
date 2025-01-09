@@ -334,21 +334,21 @@ function toggleView() {
     const view1Buttons = document.querySelectorAll('.view_1');
     const view2Buttons = document.querySelectorAll('.view_2');
   
-    // Check if view_1 buttons are currently visible
+    // to check if view_1 buttons are currently visible
     const isView1Visible = Array.from(view1Buttons).some(button => button.style.display !== 'none');
   
     if (isView1Visible) {
-      // Hide view_1 and show view_2
+      // to hide view_1 and show view_2
       view1Buttons.forEach(button => button.style.display = 'none');
       view2Buttons.forEach(button => button.style.display = 'inline-block');
     } else {
-      // Hide view_2 and show view_1
+      //to  hide view_2 and show view_1
       view2Buttons.forEach(button => button.style.display = 'none');
       view1Buttons.forEach(button => button.style.display = 'inline-block');
     }
   }
   
-  // Set the default state when the page loads
+  //to  set the default state when the page loads
   window.onload = function() {
     const view1Buttons = document.querySelectorAll('.view_1');
     const view2Buttons = document.querySelectorAll('.view_2');
@@ -390,7 +390,7 @@ function toggleDropdown() {
       function toggleFunction() {
         const functionMenu = document.getElementById('function-menu');
         
-        // Toggle the 'hidden' class to show or hide the dropdown
+        // to toggle the 'hidden' class to show or hide the dropdown
         if (functionMenu.classList.contains('hidden')) {
           functionMenu.classList.remove('hidden'); // Show the menu
         } else {
@@ -398,12 +398,12 @@ function toggleDropdown() {
         }
       }
       
-      // Close the menu when clicking outside
+      // to close the menu when clicking outside
       window.addEventListener('click', function (event) {
         const dropdownContainer = document.querySelector('.dropdown-container_two');
         const functionMenu = document.getElementById('function-menu');
       
-        // If the click is outside the dropdown container, hide the menu
+        // to enable If the click is outside the dropdown container, hide the menu
         if (!dropdownContainer.contains(event.target)) {
           functionMenu.classList.add('hidden');
         }
